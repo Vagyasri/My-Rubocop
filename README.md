@@ -13,9 +13,9 @@
 
 ### To get a local copy run the following steps:
 
-- [Copy this link](https://github.com/Vagyasri/FizzBuzz.git)
+- [Copy this link](https://github.com/Vagyasri/My-own-linter.git)
 - Open your terminal or command line
-- Run "git clone [Paste this link](https://github.com/Vagyasri/FizzBuzz.git)"
+- Run "git clone [Paste this link](https://github.com/Vagyasri/My-own-linter.git)"
 
 ## Author
 
@@ -29,7 +29,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Vagyasri/FizzBuzz/issues).
+Feel free to check the [issues page](https://github.com/Vagyasri/My-own-linter/issues).
 
 ## Show your support
 
