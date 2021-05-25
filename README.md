@@ -1,8 +1,22 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Title
+# Rubocop
 
-> Description
+> In this project I have developed a replica of Rubocop linter which will be helpful in identifying the following errors:
+- Layout
+    - AccessModifierIndentation
+    - ArgumentAlignment
+    - ArrayAlignment
+- Lint
+    - AmbiguousAssignment
+    - AmbiguousBlockAssociation
+    - AmbiguousOperator
+- Naming
+    - AccessorMethodName
+    - BinaryOperatorParameterName
+- Style
+    - AccessModifierDeclarations
+    - AccessorGrouping
 
 ## Built With
 
@@ -17,6 +31,248 @@
 - [Copy this link](https://github.com/Vagyasri/My-own-linter.git)
 - Open your terminal or command line
 - Run "git clone [Paste this link](https://github.com/Vagyasri/My-own-linter.git)"
+
+## Some good and bad examples
+
+### Layout/AccessModifierIndentation
+## EnforcedStyle: indent (default)
+# bad
+class Plumbus
+private
+  def smooth; end
+end
+
+# good
+class Plumbus
+  private
+  def smooth; end
+end
+
+## EnforcedStyle: outdent
+# bad
+class Plumbus
+  private
+  def smooth; end
+end
+
+# good
+class Plumbus
+private
+  def smooth; end
+end
+
+### Layout/ArgumentAlignment
+## EnforcedStyle: with_first_argument (default)
+# bad
+foo :bar,
+  :baz,
+  key: value
+
+foo(
+  :bar,
+    :baz,
+    key: value
+)
+
+# good
+foo :bar,
+    :baz,
+    key: value
+
+foo(
+  :bar,
+  :baz,
+  key: value
+)
+
+## EnforcedStyle: with_fixed_indentation
+# bad
+foo :bar,
+    :baz,
+    key: value
+
+# good
+foo :bar,
+  :baz,
+  key: value
+
+### Layout/ArrayAlignment
+## EnforcedStyle: with_first_element (default)
+# bad
+array = [1, 2, 3,
+  4, 5, 6]
+array = ['run',
+     'forrest',
+     'run']
+
+# good
+array = [1, 2, 3,
+         4, 5, 6]
+array = ['run',
+         'forrest',
+         'run']
+
+## EnforcedStyle: with_fixed_indentation
+# bad
+array = [1, 2, 3,
+         4, 5, 6]
+
+# good
+array = [1, 2, 3,
+  4, 5, 6]
+
+### Lint/AmbiguousAssignment
+# bad
+x =- y
+x =+ y
+x =* y
+x =! y
+
+# good
+x -= y # or x = -y
+x += y # or x = +y
+x *= y # or x = *y
+x != y # or x = !y
+
+### Lint/AmbiguousBlockAssociation
+# bad
+some_method a { |val| puts val }
+# good
+# With parentheses, there's no ambiguity.
+some_method(a { |val| puts val })
+# or (different meaning)
+some_method(a) { |val| puts val }
+
+# good
+# Operator methods require no disambiguation
+foo == bar { |b| b.baz }
+
+# good
+# Lambda arguments require no disambiguation
+foo = ->(bar) { bar.baz }
+
+### Lint/AmbiguousOperator
+# bad
+
+# The `*` is interpreted as a splat operator but it could possibly be
+# a `*` method invocation (i.e. `do_something.*(some_array)`).
+do_something *some_array
+# good
+
+# With parentheses, there's no ambiguity.
+do_something(*some_array)
+
+### Naming/AccessorMethodName
+# bad
+def set_attribute(value)
+end
+
+# good
+def attribute=(value)
+end
+
+# bad
+def get_attribute
+end
+
+# good
+def attribute
+end
+
+# accepted, incorrect arity for getter
+def get_value(attr)
+end
+
+# accepted, incorrect arity for setter
+def set_value
+end
+
+### Naming/BinaryOperatorParameterName
+# bad
+def +(amount); end
+
+# good
+def +(other); end
+
+### Style/AccessModifierDeclarations
+# bad
+class Foo
+
+  private def bar; end
+  private def baz; end
+
+end
+
+# good
+class Foo
+
+  private
+
+  def bar; end
+  def baz; end
+
+end
+EnforcedStyle: inline
+
+# bad
+class Foo
+
+  private
+
+  def bar; end
+  def baz; end
+
+end
+
+# good
+class Foo
+
+  private def bar; end
+  private def baz; end
+
+end
+
+## AllowModifiersOnSymbols: true (default)
+# good
+class Foo
+
+  private :bar, :baz
+
+end
+
+## AllowModifiersOnSymbols: false
+# bad
+class Foo
+
+  private :bar, :baz
+
+end
+
+### Style/AccessorGrouping
+## EnforcedStyle: grouped (default)
+# bad
+class Foo
+  attr_reader :bar
+  attr_reader :baz
+end
+
+# good
+class Foo
+  attr_reader :bar, :baz
+end
+
+## EnforcedStyle: separated
+
+# bad
+class Foo
+  attr_reader :bar, :baz
+end
+
+# good
+class Foo
+  attr_reader :bar
+  attr_reader :baz
+end
 
 ## How to set up tests
 
@@ -49,3 +305,7 @@ Feel free to check the [issues page](https://github.com/Vagyasri/My-own-linter/i
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgement
+
+https://docs.rubocop.org/rubocop/cops_style.html
