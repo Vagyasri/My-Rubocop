@@ -32,10 +32,11 @@
 - Open your terminal or command line
 - Run "git clone [Paste this link](https://github.com/Vagyasri/My-own-linter.git)"
 
-## Some good and bad examples
+### Some good and bad examples
 
-### Layout/AccessModifierIndentation
-## EnforcedStyle: indent (default)
+#### Layout/AccessModifierIndentation
+#### EnforcedStyle: indent (default)
+~~~ruby
 # bad
 class Plumbus
 private
@@ -60,9 +61,10 @@ class Plumbus
 private
   def smooth; end
 end
-
-### Layout/ArgumentAlignment
-## EnforcedStyle: with_first_argument (default)
+~~~
+#### Layout/ArgumentAlignment
+#### EnforcedStyle: with_first_argument (default)
+~~~ruby
 # bad
 foo :bar,
   :baz,
@@ -84,8 +86,9 @@ foo(
   :baz,
   key: value
 )
-
-## EnforcedStyle: with_fixed_indentation
+~~~
+#### EnforcedStyle: with_fixed_indentation
+~~~ruby
 # bad
 foo :bar,
     :baz,
@@ -95,9 +98,10 @@ foo :bar,
 foo :bar,
   :baz,
   key: value
-
-### Layout/ArrayAlignment
-## EnforcedStyle: with_first_element (default)
+~~~
+#### Layout/ArrayAlignment
+#### EnforcedStyle: with_first_element (default)
+~~~ruby
 # bad
 array = [1, 2, 3,
   4, 5, 6]
@@ -111,8 +115,9 @@ array = [1, 2, 3,
 array = ['run',
          'forrest',
          'run']
-
-## EnforcedStyle: with_fixed_indentation
+~~~
+#### EnforcedStyle: with_fixed_indentation
+~~~ruby
 # bad
 array = [1, 2, 3,
          4, 5, 6]
@@ -120,8 +125,9 @@ array = [1, 2, 3,
 # good
 array = [1, 2, 3,
   4, 5, 6]
-
-### Lint/AmbiguousAssignment
+~~~
+#### Lint/AmbiguousAssignment
+~~~ruby
 # bad
 x =- y
 x =+ y
@@ -133,8 +139,9 @@ x -= y # or x = -y
 x += y # or x = +y
 x *= y # or x = *y
 x != y # or x = !y
-
-### Lint/AmbiguousBlockAssociation
+~~~
+#### Lint/AmbiguousBlockAssociation
+~~~ruby
 # bad
 some_method a { |val| puts val }
 # good
@@ -150,8 +157,9 @@ foo == bar { |b| b.baz }
 # good
 # Lambda arguments require no disambiguation
 foo = ->(bar) { bar.baz }
-
-### Lint/AmbiguousOperator
+~~~
+#### Lint/AmbiguousOperator
+~~~ruby
 # bad
 
 # The `*` is interpreted as a splat operator but it could possibly be
@@ -161,8 +169,9 @@ do_something *some_array
 
 # With parentheses, there's no ambiguity.
 do_something(*some_array)
-
-### Naming/AccessorMethodName
+~~~
+#### Naming/AccessorMethodName
+~~~ruby
 # bad
 def set_attribute(value)
 end
@@ -186,15 +195,17 @@ end
 # accepted, incorrect arity for setter
 def set_value
 end
-
-### Naming/BinaryOperatorParameterName
+~~~
+#### Naming/BinaryOperatorParameterName
+~~~ruby
 # bad
 def +(amount); end
 
 # good
 def +(other); end
-
-### Style/AccessModifierDeclarations
+~~~
+#### Style/AccessModifierDeclarations
+~~~ruby
 # bad
 class Foo
 
@@ -212,8 +223,9 @@ class Foo
   def baz; end
 
 end
-EnforcedStyle: inline
-
+~~~
+#### EnforcedStyle: inline
+~~~ruby
 # bad
 class Foo
 
@@ -231,25 +243,28 @@ class Foo
   private def baz; end
 
 end
-
-## AllowModifiersOnSymbols: true (default)
+~~~
+#### AllowModifiersOnSymbols: true (default)
+~~~ruby
 # good
 class Foo
 
   private :bar, :baz
 
 end
-
-## AllowModifiersOnSymbols: false
+~~~
+#### AllowModifiersOnSymbols: false
+~~~ruby
 # bad
 class Foo
 
   private :bar, :baz
 
 end
-
-### Style/AccessorGrouping
-## EnforcedStyle: grouped (default)
+~~~
+#### Style/AccessorGrouping
+#### EnforcedStyle: grouped (default)
+~~~ruby
 # bad
 class Foo
   attr_reader :bar
@@ -260,9 +275,9 @@ end
 class Foo
   attr_reader :bar, :baz
 end
-
-## EnforcedStyle: separated
-
+~~~
+#### EnforcedStyle: separated
+~~~ruby
 # bad
 class Foo
   attr_reader :bar, :baz
@@ -273,6 +288,7 @@ class Foo
   attr_reader :bar
   attr_reader :baz
 end
+~~~
 
 ## How to set up tests
 
