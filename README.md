@@ -32,9 +32,23 @@
 - Open your terminal or command line
 - Run "git clone [Paste this link](https://github.com/Vagyasri/My-own-linter.git)"
 
-### Some good and bad examples
+### How to set up tests
 
-#### Layout/AccessModifierIndentation
+- Boot up your terminal and punch in "gem install rspec" to install RSpec
+- You can verify your version of RSpec with "rspec --version"
+- cd into project directory "Tic-Tac-Toe" and type "rspec --init" to initialize RSpec within the project
+- This will generate two files, ".rspec" and "spec/spec_helper.rb"
+- You can create the ruby test file inside the spec directory (eg: logic_spec.rb, player_spec.rb)
+
+### How to run tests
+
+- You can simply run "rspec" in the terminal by cd into the directory in order torun the tests
+- You can also run "rspec file-path" for the particular file you want to test from the directory
+- You can run "rubocop" inorder to check the linter errors
+
+## Some good and bad examples
+
+### Layout/AccessModifierIndentation
 #### EnforcedStyle: indent (default)
 ~~~ruby
 # bad
@@ -48,8 +62,9 @@ class Plumbus
   private
   def smooth; end
 end
-
-## EnforcedStyle: outdent
+~~~
+#### EnforcedStyle: outdent
+~~~ruby
 # bad
 class Plumbus
   private
@@ -62,7 +77,7 @@ private
   def smooth; end
 end
 ~~~
-#### Layout/ArgumentAlignment
+### Layout/ArgumentAlignment
 #### EnforcedStyle: with_first_argument (default)
 ~~~ruby
 # bad
@@ -99,7 +114,7 @@ foo :bar,
   :baz,
   key: value
 ~~~
-#### Layout/ArrayAlignment
+### Layout/ArrayAlignment
 #### EnforcedStyle: with_first_element (default)
 ~~~ruby
 # bad
@@ -126,7 +141,7 @@ array = [1, 2, 3,
 array = [1, 2, 3,
   4, 5, 6]
 ~~~
-#### Lint/AmbiguousAssignment
+### Lint/AmbiguousAssignment
 ~~~ruby
 # bad
 x =- y
@@ -140,7 +155,7 @@ x += y # or x = +y
 x *= y # or x = *y
 x != y # or x = !y
 ~~~
-#### Lint/AmbiguousBlockAssociation
+### Lint/AmbiguousBlockAssociation
 ~~~ruby
 # bad
 some_method a { |val| puts val }
@@ -158,7 +173,7 @@ foo == bar { |b| b.baz }
 # Lambda arguments require no disambiguation
 foo = ->(bar) { bar.baz }
 ~~~
-#### Lint/AmbiguousOperator
+### Lint/AmbiguousOperator
 ~~~ruby
 # bad
 
@@ -170,7 +185,7 @@ do_something *some_array
 # With parentheses, there's no ambiguity.
 do_something(*some_array)
 ~~~
-#### Naming/AccessorMethodName
+### Naming/AccessorMethodName
 ~~~ruby
 # bad
 def set_attribute(value)
@@ -196,7 +211,7 @@ end
 def set_value
 end
 ~~~
-#### Naming/BinaryOperatorParameterName
+### Naming/BinaryOperatorParameterName
 ~~~ruby
 # bad
 def +(amount); end
@@ -204,7 +219,7 @@ def +(amount); end
 # good
 def +(other); end
 ~~~
-#### Style/AccessModifierDeclarations
+### Style/AccessModifierDeclarations
 ~~~ruby
 # bad
 class Foo
@@ -262,7 +277,7 @@ class Foo
 
 end
 ~~~
-#### Style/AccessorGrouping
+### Style/AccessorGrouping
 #### EnforcedStyle: grouped (default)
 ~~~ruby
 # bad
@@ -289,20 +304,6 @@ class Foo
   attr_reader :baz
 end
 ~~~
-
-## How to set up tests
-
-- Boot up your terminal and punch in "gem install rspec" to install RSpec
-- You can verify your version of RSpec with "rspec --version"
-- cd into project directory "Tic-Tac-Toe" and type "rspec --init" to initialize RSpec within the project
-- This will generate two files, ".rspec" and "spec/spec_helper.rb"
-- You can create the ruby test file inside the spec directory (eg: logic_spec.rb, player_spec.rb)
-
-## How to run tests
-
-- You can simply run "rspec" in the terminal by cd into the directory in order torun the tests
-- You can also run "rspec file-path" for the particular file you want to test from the directory
-- You can run "rubocop" inorder to check the linter errors
 
 ## Author
 
