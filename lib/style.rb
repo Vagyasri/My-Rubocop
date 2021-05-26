@@ -1,7 +1,3 @@
-def access_modifier_declarations
+def access_modifier_declarations; end
 
-end
-
-def accessor_grouping
-    
-end
+def accessor_grouping; end

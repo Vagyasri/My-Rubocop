@@ -1,7 +1,3 @@
-def accessor_method_name
+def accessor_method_name; end
 
-end
-
-def binary_operator_parameter_name
-    
-end
+def binary_operator_parameter_name; end

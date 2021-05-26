@@ -1,12 +1,5 @@
+def indentation; end
 
-def indentation
+def argument_alignment; end
 
-end
-
-def argument_alignment
-
-end
-
-def array_alignment
-
-end    
+def array_alignment; end

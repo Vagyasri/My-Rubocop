@@ -1,11 +1,5 @@
-def ambiguous_assignment
+def ambiguous_assignment; end
 
-end
+def ambiguous_block_association; end
 
-def ambiguous_block_association
-
-end
-
-def ambiguous_operator
-
-end
+def ambiguous_operator; end
