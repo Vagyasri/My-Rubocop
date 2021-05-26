@@ -164,6 +164,7 @@ x != y # or x = !y
 ~~~ruby
 # bad
 some_method a { |val| puts val }
+
 # good
 # With parentheses, there's no ambiguity.
 some_method(a { |val| puts val })
@@ -181,12 +182,11 @@ foo = ->(bar) { bar.baz }
 ### Lint/AmbiguousOperator
 ~~~ruby
 # bad
-
 # The `*` is interpreted as a splat operator but it could possibly be
 # a `*` method invocation (i.e. `do_something.*(some_array)`).
 do_something *some_array
-# good
 
+# good
 # With parentheses, there's no ambiguity.
 do_something(*some_array)
 ~~~
