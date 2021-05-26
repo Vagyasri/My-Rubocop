@@ -32,13 +32,18 @@
 - Open your terminal or command line
 - Run "git clone [Paste this link](https://github.com/Vagyasri/My-own-linter.git)"
 
+### Run the Linter
+
+- Simply run "bin/main file_name.rb" in your terminal or command line
+  (file_name.rb: The file on which you wasnt to execute this rubocop)
+
 ### How to set up tests
 
 - Boot up your terminal and punch in "gem install rspec" to install RSpec
 - You can verify your version of RSpec with "rspec --version"
-- cd into project directory "Tic-Tac-Toe" and type "rspec --init" to initialize RSpec within the project
+- cd into project directory "MY-OWN-LINTER" and type "rspec --init" to initialize RSpec within the project
 - This will generate two files, ".rspec" and "spec/spec_helper.rb"
-- You can create the ruby test file inside the spec directory (eg: logic_spec.rb, player_spec.rb)
+- You can create the ruby test file inside the spec directory (eg: layput_spec.rb, lint_spec.rb)
 
 ### How to run tests
 
