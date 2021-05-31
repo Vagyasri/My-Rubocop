@@ -9,7 +9,6 @@
     - ArrayAlignment
 - Lint
     - AmbiguousAssignment
-    - AmbiguousBlockAssociation
     - AmbiguousOperator
 - Naming
     - AccessorMethodName
@@ -54,7 +53,6 @@
 ## Some good and bad examples
 
 ### Layout/AccessModifierIndentation
-#### EnforcedStyle: indent (default)
 ~~~ruby
 # bad
 class Plumbus
@@ -65,25 +63,10 @@ end
 # good
 class Plumbus
   private
-  def smooth; end
-end
-~~~
-#### EnforcedStyle: outdent
-~~~ruby
-# bad
-class Plumbus
-  private
-  def smooth; end
-end
-
-# good
-class Plumbus
-private
   def smooth; end
 end
 ~~~
 ### Layout/ArgumentAlignment
-#### EnforcedStyle: with_first_argument (default)
 ~~~ruby
 # bad
 foo :bar,
@@ -106,21 +89,8 @@ foo(
   :baz,
   key: value
 )
-~~~
-#### EnforcedStyle: with_fixed_indentation
-~~~ruby
-# bad
-foo :bar,
-    :baz,
-    key: value
-
-# good
-foo :bar,
-  :baz,
-  key: value
 ~~~
 ### Layout/ArrayAlignment
-#### EnforcedStyle: with_first_element (default)
 ~~~ruby
 # bad
 array = [1, 2, 3,
@@ -136,16 +106,6 @@ array = ['run',
          'forrest',
          'run']
 ~~~
-#### EnforcedStyle: with_fixed_indentation
-~~~ruby
-# bad
-array = [1, 2, 3,
-         4, 5, 6]
-
-# good
-array = [1, 2, 3,
-  4, 5, 6]
-~~~
 ### Lint/AmbiguousAssignment
 ~~~ruby
 # bad
@@ -159,25 +119,6 @@ x -= y # or x = -y
 x += y # or x = +y
 x *= y # or x = *y
 x != y # or x = !y
-~~~
-### Lint/AmbiguousBlockAssociation
-~~~ruby
-# bad
-some_method a { |val| puts val }
-
-# good
-# With parentheses, there's no ambiguity.
-some_method(a { |val| puts val })
-# or (different meaning)
-some_method(a) { |val| puts val }
-
-# good
-# Operator methods require no disambiguation
-foo == bar { |b| b.baz }
-
-# good
-# Lambda arguments require no disambiguation
-foo = ->(bar) { bar.baz }
 ~~~
 ### Lint/AmbiguousOperator
 ~~~ruby
@@ -244,46 +185,7 @@ class Foo
 
 end
 ~~~
-#### EnforcedStyle: inline
-~~~ruby
-# bad
-class Foo
-
-  private
-
-  def bar; end
-  def baz; end
-
-end
-
-# good
-class Foo
-
-  private def bar; end
-  private def baz; end
-
-end
-~~~
-#### AllowModifiersOnSymbols: true (default)
-~~~ruby
-# good
-class Foo
-
-  private :bar, :baz
-
-end
-~~~
-#### AllowModifiersOnSymbols: false
-~~~ruby
-# bad
-class Foo
-
-  private :bar, :baz
-
-end
-~~~
 ### Style/AccessorGrouping
-#### EnforcedStyle: grouped (default)
 ~~~ruby
 # bad
 class Foo
@@ -294,19 +196,6 @@ end
 # good
 class Foo
   attr_reader :bar, :baz
-end
-~~~
-#### EnforcedStyle: separated
-~~~ruby
-# bad
-class Foo
-  attr_reader :bar, :baz
-end
-
-# good
-class Foo
-  attr_reader :bar
-  attr_reader :baz
 end
 ~~~
 
