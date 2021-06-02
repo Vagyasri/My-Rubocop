@@ -1,3 +1,9 @@
-def accessor_method_name; end
+#!/usr/bin/env ruby
 
-def binary_operator_parameter_name; end
+class Naming
+    def accessor_method_name
+    end
+
+    def binary_operator_parameter_name
+    end
+end

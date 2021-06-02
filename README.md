@@ -57,13 +57,15 @@
 # bad
 class Plumbus
 private
-  def smooth; end
+  def smooth
+  end
 end
 
 # good
 class Plumbus
   private
-  def smooth; end
+  def smooth
+  end
 end
 ~~~
 ### Layout/ArgumentAlignment

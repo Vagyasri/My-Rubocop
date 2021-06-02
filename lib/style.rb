@@ -1,3 +1,9 @@
-def access_modifier_declarations; end
+#!/usr/bin/env ruby
 
-def accessor_grouping; end
+class Style
+    def access_modifier_declarations
+    end
+
+    def accessor_grouping
+    end
+end

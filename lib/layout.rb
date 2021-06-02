@@ -1,18 +1,12 @@
 #!/usr/bin/env ruby
 
 class Layout
-  def initialize(file_name)
-    
+  def indentation
   end
 
-  def check_errors(file_data)
+  def argument_alignment
   end
 
-  def indentation(file_data)
-    
+  def array_alignment
   end
-
-  def argument_alignment; end
-
-  def array_alignment; end
 end
