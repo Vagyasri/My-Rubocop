@@ -2,6 +2,7 @@
 
 class Layout
   def indentation
+    
   end
 
   def argument_alignment
