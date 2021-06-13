@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-class Layout
-  def indentation
-    
+module Layout
+
+  class Indentation
   end
 
-  def argument_alignment
+  class ArgumentAlignment 
   end
 
-  def array_alignment
+  class ArrayAlignment
   end
 end
