@@ -28,10 +28,4 @@ module Lint
       end    
     end  
   end
-
-  class ambiguous_block_association
-  end
-
-  class ambiguous_operator
-  end
 end

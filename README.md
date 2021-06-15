@@ -9,7 +9,6 @@
     - ArrayAlignment
 - Lint
     - AmbiguousAssignment
-    - AmbiguousOperator
 - Naming
     - AccessorMethodName
     - BinaryOperatorParameterName
@@ -121,17 +120,6 @@ x -= y # or x = -y
 x += y # or x = +y
 x *= y # or x = *y
 x != y # or x = !y
-~~~
-### Lint/AmbiguousOperator
-~~~ruby
-# bad
-# The `*` is interpreted as a splat operator but it could possibly be
-# a `*` method invocation (i.e. `do_something.*(some_array)`).
-do_something *some_array
-
-# good
-# With parentheses, there's no ambiguity.
-do_something(*some_array)
 ~~~
 ### Naming/AccessorMethodName
 ~~~ruby
