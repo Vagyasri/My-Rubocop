@@ -7,6 +7,8 @@
     - AccessModifierIndentation
     - ArgumentAlignment
     - ArrayAlignment
+    - LineLength
+
 - Lint
     - AmbiguousAssignment
 - Naming
