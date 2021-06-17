@@ -2,6 +2,7 @@ require 'strscan'
 
 class FileReader
   attr_reader :read_file, :lines
+
   def initialize(path)
     @read_file = File.open(path)
     @lines = []

@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
 class Plumbus
-  private
-    def smooth
-    end
+private
+  def smooth
   end
-  foo :bar,
+end
+foo :bar,
   :baz,
   key: value
 
@@ -42,13 +42,11 @@ class Foo
 end
 
 class Foo
-  attr_reader :bar
-  attr_reader :baz
+  attr_reader :bar, :baz
 end
 
 # def addition(a, b)
 #   a + b
 # end
-
 
 p addition(5, 7)

@@ -17,8 +17,8 @@ puts "Offenses:\n"
 
 errors = error_list.values.flatten
 if @errors.length.zero?
-  puts '1 file inspected, no offenses detected '.upcase.blue.on_green
+  puts "1 file inspected, #{'no offenses'.green}detected"
 else
   err_msg
-  puts "1 file inspected, #{@errors.length} offense detected.".upcase.red.on_light_white
+  puts "1 file inspected, #{"#{@errors.length} offense".yellow}detected."
 end
