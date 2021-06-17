@@ -3,7 +3,7 @@
 module Layout
   class Indentation
     def find_beginning(keyword)
-      keyword =~ /(^\s*class\s)|(^\s*private\s)|(^\s*public\s)|(^\s*def\s)|(\sdo\s)|(^\s*if)|(\sdo$)/
+      keyword =~ /(^\s*private\s)|(^\s*public\s)|(^\s*def\s)|(\sdo\s)|(^\s*if)|(\sdo$)/
     end
 
     def find_ending(keyword)

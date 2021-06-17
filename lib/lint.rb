@@ -13,7 +13,7 @@ module Lint
     end
     def assign
       bad_assign = %w[=- =+ =* =! =/ =%]
-      good_assign = ["= -" "= +" "= *" "= !" "= /" "= %"] || %w[-= += *= != /= %=]
+      good_assign = %w[-= += *= != /= %=]
     end
     def replace
       i = 0

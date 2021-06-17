@@ -1,11 +1,54 @@
 #!/usr/bin/env ruby
 
-# rubocop: disable Naming/MethodParameterName
+class Plumbus
+  private
+    def smooth
+    end
+  end
+  foo :bar,
+  :baz,
+  key: value
 
-def addition(a, b)
-  a + b
+foo(
+  :bar,
+    :baz,
+    key: value
+)
+
+array = [1, 2, 3,
+  4, 5, 6]
+array = ['run',
+     'forrest',
+     'run']
+
+x =- y
+x =+ y
+x =* y
+x =! y
+
+def set_attribute(value)
 end
 
-# rubocop: enable Naming/MethodParameterName
+def get_attribute
+end
+
+def +(amount); end
+
+class Foo
+
+  private def bar; end
+  private def baz; end
+
+end
+
+class Foo
+  attr_reader :bar
+  attr_reader :baz
+end
+
+# def addition(a, b)
+#   a + b
+# end
+
 
 p addition(5, 7)
