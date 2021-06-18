@@ -13,6 +13,8 @@ def cop_checker(path)
         "AccessModifierDeclarations" => [],
         "AccessorGrouping" => []
     }
+    @specific_terms = [/private/i, /public/i]
+    @indent = 0
     @file.read_lines
     error_checking
 end   
