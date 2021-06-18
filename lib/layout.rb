@@ -1,23 +1,20 @@
 #!/usr/bin/env ruby
 
-module Layout
-  class Indentation
-    def find_beginning(keyword)
-      keyword =~ /(^\s*private\s)|(^\s*public\s)|(^\s*def\s)|(\sdo\s)|(^\s*if)|(\sdo$)/
-    end
-
-    def find_ending(keyword)
-      keyword =~ /(end$)/
-    end
-
-    def find_else(keyword)
-      keyword =~ /(^\s*els)/
+class Layout
+  def indentation
+    if @file.lines[line_num].check_until(/^\s*end/i)
+      @indent -= 2
+      if @current_file.file_lines[line_num].scan_until(/^\s*/).split('').count != @indent
+        @error_hash['Indentation Error Detected'] << line_num + 1
+      end
+    elsif @current_file.file_lines[line_num].check_until(/^\s*\w/)
+      check_for_reserved_words(line_num)
     end
   end
 
-  class ArgumentAlignment
+  def argument_alignment
   end
 
-  class ArrayAlignment
+  def array_alignment
   end
 end

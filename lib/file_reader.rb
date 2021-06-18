@@ -9,8 +9,8 @@ class FileReader
   end
 
   def read_lines
-    @read_file.each_with_index do |line, ind|
-      @lines[ind] = StringScanner.new(line)
+    @read_file.each_with_index do |line, index|
+      @lines[index] = StringScanner.new(line)
     end
   end
 end
